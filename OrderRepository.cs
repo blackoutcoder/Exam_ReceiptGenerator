@@ -14,7 +14,7 @@ public class OrderRepository
     public void OrderGenerator()                                                 //OrderGenerator() method 
     {
         ItemRepository itemRepository = new ItemRepository();                    //Declaring itemRepository as a new ItemRepository()
-
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine(">Enter how many orderes to generate....");            //Asks how many orders to generate
         string orderNumber = Console.ReadLine();                                 //Reads the console and daclares entered string to 'orderNumber' variable
         while (!int.TryParse(orderNumber, out int num) == true)                  //Checks if an entered character is not a <string>                                                               
