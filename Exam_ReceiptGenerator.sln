@@ -3,16 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exam_ReceiptGenerator", "Exam_ReceiptGenerator.csproj", "{38C1797C-BC99-4716-83AA-3FA1F8F1A75F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exam_ReceiptGenerator", "Exam_ReceiptGenerator.csproj", "{38C1797C-BC99-4716-83AA-3FA1F8F1A75F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClassModels", "ClassModels", "{165B3C19-6FD8-4C7B-AEF9-5A505E9077B6}"
 	ProjectSection(SolutionItems) = preProject
 		Item.cs = Item.cs
+		Order.cs = Order.cs
+		OrderItem.cs = OrderItem.cs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{705E0144-C840-4189-AF05-BF0CB5263D23}"
 	ProjectSection(SolutionItems) = preProject
 		ItemRepository.cs = ItemRepository.cs
+		OrderRepository.cs = OrderRepository.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Functions", "Functions", "{63FCA8E2-04B2-4095-9903-66F1CE2F221B}"
+	ProjectSection(SolutionItems) = preProject
+		DataPrinter.cs = DataPrinter.cs
 	EndProjectSection
 EndProject
 Global
