@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class DataPrinter
+public class Methods
 {
     public void PrintProductList()
     {
@@ -30,7 +30,7 @@ public class DataPrinter
         decimal totalPrice = 0;
         for (int i = 0; i < orders.Count; i++)
         {
-            Console.WriteLine($">Order nr.{i + 1} datails: ");
+            Console.WriteLine($">Order nr.{i + 1} details: ");
             Console.WriteLine($">Order data: {orders[i].OrderDate}.");
             for (int j = 0; j < orders[i].OrderItems.Count; j++)
             {
@@ -57,5 +57,11 @@ public class DataPrinter
         Console.WriteLine();
         Console.WriteLine($">{orders.Count} receipt(s) successfully generated");
         Console.ReadLine();
+    }
+
+    public void Printer()
+    {
+        PrintProductList();
+        PrintOrdersData();
     }
 }

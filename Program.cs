@@ -8,10 +8,8 @@ namespace Exam_ReceiptGenerator
     {
         static void Main(string[] args)
         {
-            
-            DataPrinter dataPrinter = new DataPrinter();
-            dataPrinter.PrintProductList();
-            dataPrinter.PrintOrdersData();
+            Methods methods = new Methods(); // Creating new Methods class object 'methods' .
+            methods.Printer(); //Calling Printer() method from 'methods' .
         }    
     }
 }
