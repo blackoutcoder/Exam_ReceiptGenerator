@@ -7,8 +7,8 @@ public class Methods
     {
         Console.WriteLine(" - Generating Receipts for Orders...");
         Console.WriteLine();
-        ItemRepository prodRep = new ItemRepository();
-        List<Item> itemsList = prodRep.Retrieve();
+        ItemRepository itemRep = new ItemRepository();
+        List<Item> itemsList = itemRep.Retrieve();
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine(" - Products for sell: ");
         Console.ResetColor();
@@ -56,6 +56,19 @@ public class Methods
         Console.WriteLine(totalPrice + " Eur.");
         Console.WriteLine();
         Console.WriteLine($">{orders.Count} receipt(s) successfully generated");
+        Console.WriteLine(">Enter an order number to view details and press ENTER..."); // Code for view an order you want .
+        int orderNumber = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($">Order nr.{orderNumber} details: ");
+        Console.WriteLine($">Order data: {orders[orderNumber].OrderDate}.");
+        for (int j = 0; j < orders[orderNumber].OrderItems.Count; j++)
+        {
+            Item item = orders[orderNumber].OrderItems[j].Item;
+            Console.WriteLine(
+                $" - Product: {item.ItemName}; " +
+                $" - Product description: {item.ItemDescription}; " +
+                $" - Product price/unt.: {item.ItemPrice}; " +
+                $" - Quantity: {orders[orderNumber].OrderItems[j].Quantity}.");
+        }
         Console.ReadLine();
     }
 

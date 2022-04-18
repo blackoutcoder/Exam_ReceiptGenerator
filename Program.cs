@@ -8,8 +8,12 @@ namespace Exam_ReceiptGenerator
     {
         static void Main(string[] args)
         {
-            Methods methods = new Methods(); // Creating new Methods class object 'methods' .
-            methods.Printer(); //Calling Printer() method from 'methods' .
+            Methods methods = new Methods();    // Creating new Methods class object 'methods' .
+            methods.Printer();                  //Calling Printer() method from 'methods' .
         }    
     }
 }
+
+
+
+//Task is to create Receipt generator for orders. First we need to generate orders with some item-lists and price. 
