@@ -30,6 +30,7 @@ public class Methods
         Console.WriteLine($">Number of Orders: {orders.Count}");
         Console.WriteLine();
         decimal totalPrice = 0;
+        int totalItems = 0;
         for (int i = 0; i < orders.Count; i++)
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -45,21 +46,24 @@ public class Methods
                     $" - Product price/unt.: {item.ItemPrice}; " +
                     $" - Quantity: {orders[i].OrderItems[j].Quantity}.");
             }
-            
+            int itemsBought = orders[i].CountItem();
             decimal priceToPay = orders[i].CountPrice();
             Console.WriteLine($">Total price: {priceToPay} Eur.");
             Console.WriteLine();
             totalPrice += priceToPay;
+            totalItems += itemsBought;
         }
 
         Console.WriteLine();
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.Write(">Total payed: ");
-        Console.WriteLine(totalPrice + " Eur.");
+        
+        Console.WriteLine($">Total payed: {totalPrice}   Eur.");
+        Console.WriteLine();
+        Console.WriteLine($">Total products sold: {totalItems} pcs.");                                 //Total products sold
         Console.WriteLine();
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine($">{orders.Count} receipt(s) successfully generated");
-        Console.WriteLine(">Enter an order number to view details and press ENTER...");                 // Code for view an order you want .
+        Console.WriteLine(">Enter an order number to view details and press ENTER...");                 // Code to view an order you want .
         string orderNumber = Console.ReadLine();
         while (!int.TryParse(orderNumber, out int num) == true)                                         //Checks if an entered character is not a <string>                                                               
         {
@@ -84,8 +88,7 @@ public class Methods
             decimal priceToPay = orders[Convert.ToInt32(orderNumber)].CountPrice();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($">Total price: {priceToPay} Eur.");
-            Console.WriteLine();
-            totalPrice += priceToPay;                                                                   //Printing Order Detailes 
+            Console.WriteLine();                                                                        //Printing Order Detailes 
             Console.ReadLine();                                                                         //Printing Order Detailes 
         }
         else

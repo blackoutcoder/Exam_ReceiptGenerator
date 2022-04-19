@@ -42,5 +42,15 @@ public class Order
         return price;
     }
 
+    public int CountItem()
+    {
+        int selledItemQuantity = 0;
+        for (int i = 0; i < OrderItems.Count; i++)
+        {
+            selledItemQuantity += OrderItems[i].Quantity;
+        }
+        return selledItemQuantity;
+    }
+
     
 }
