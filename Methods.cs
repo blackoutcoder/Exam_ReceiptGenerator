@@ -65,6 +65,7 @@ public class Methods
         Console.WriteLine($">Total products sold: {totalItems} pcs.");                                 //Total products sold
         Console.WriteLine();
         Console.WriteLine($">Total Brandy sold {totalBest} pcs for {(totalBest) * 12.49} Eur.");
+        Console.WriteLine();
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine($">{orders.Count} receipt(s) successfully generated");
         Console.WriteLine(">Enter an order number to view details and press ENTER...");                 // Code to view an order you want .
