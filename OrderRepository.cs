@@ -15,7 +15,7 @@ public class OrderRepository
     {
         ItemRepository itemRepository = new ItemRepository();                    //Declaring itemRepository as a new ItemRepository()
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine(">Enter how many orderes to generate....");            //Asks how many orders to generate
+        Console.WriteLine(">Enter how many orders to generate....");             //Asks how many orders to generate
         string orderNumber = Console.ReadLine();                                 //Reads the console and daclares entered string to 'orderNumber' variable
         while (!int.TryParse(orderNumber, out int num) == true)                  //Checks if an entered character is not a <string>                                                               
         {
@@ -25,7 +25,7 @@ public class OrderRepository
 
         for (int i = 0; i < Convert.ToInt32(orderNumber); i++)                   //'For' loop is adding a new Order to 'OrderList' - 'orderNumber' times :))) if you understand what i mean))) 
         {
-            OrdersList.Add(new Order(DateTime.Now, itemRepository.Retrieve()));  //Item list is takes from itemRepository
+            OrdersList.Add(new Order(DateTime.Now, itemRepository.Generate()));  //Item list is takes from itemRepository
         }
 
     }

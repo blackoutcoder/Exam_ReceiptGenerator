@@ -19,3 +19,4 @@
  PrintOrderData() method  modifyed in Methods.cs(59, 9), added posibility to view any generated order details by entering an Order number daclaired by Order Generator. Thinking about putting it all in a method.. <|||||>
  Check algorithm added to check an entered order number in PrintOrderData() method in Methods.cs(61, 9), checks if an entered number is not a string value and if an entered value is higher than 0 and lower than number of generated orders <|||||>
  Visual improvements added in Console view, now orderes listed in colours for more comfort <|||||>
+ Generator() method added to ItemRepository.cs(35, 5), generating random list of order every time we generating a new order <|||||>
