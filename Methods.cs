@@ -31,6 +31,7 @@ public class Methods
         Console.WriteLine();
         decimal totalPrice = 0;
         int totalItems = 0;
+        int totalBest = 0;
         for (int i = 0; i < orders.Count; i++)
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -43,24 +44,27 @@ public class Methods
                 Console.WriteLine(
                     $" - Product: {item.ItemName}; " +
                     $" - Product description: {item.ItemDescription}; " +
-                    $" - Product price/unt.: {item.ItemPrice}; " +
+                    $" - Product price/pcs.: {item.ItemPrice}; " +
                     $" - Quantity: {orders[i].OrderItems[j].Quantity}.");
             }
+            int itemIndex1 = orders[i].CountItemChosen(11);
             int itemsBought = orders[i].CountItem();
             decimal priceToPay = orders[i].CountPrice();
             Console.WriteLine($">Total price: {priceToPay} Eur.");
             Console.WriteLine();
             totalPrice += priceToPay;
             totalItems += itemsBought;
+            totalBest += itemIndex1;
         }
 
         Console.WriteLine();
         Console.ForegroundColor = ConsoleColor.Red;
         
-        Console.WriteLine($">Total payed: {totalPrice}   Eur.");
+        Console.WriteLine($">Total payed: {totalPrice} Eur.");
         Console.WriteLine();
         Console.WriteLine($">Total products sold: {totalItems} pcs.");                                 //Total products sold
         Console.WriteLine();
+        Console.WriteLine($">Total Brandy sold {totalBest} pcs for {(totalBest) * 12.49} Eur.");
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine($">{orders.Count} receipt(s) successfully generated");
         Console.WriteLine(">Enter an order number to view details and press ENTER...");                 // Code to view an order you want .
@@ -80,9 +84,9 @@ public class Methods
                 Item item = orders[Convert.ToInt32(orderNumber)].OrderItems[j].Item;
                 Console.ForegroundColor = ConsoleColor.White;                                           //Printing Order Detailes 
                 Console.WriteLine(                                                                      //Printing Order Detailes 
-                    $" - Product: {item.ItemName}; " +                                                  //Printing Order Detailes 
-                    $" - Product description: {item.ItemDescription}; " +                               //Printing Order Detailes 
-                    $" - Product price/unt.: {item.ItemPrice}; " +                                      //Printing Order Detailes 
+                    $" - Product : {item.ItemName}; " +                                                  //Printing Order Detailes 
+                    $" - Product description : {item.ItemDescription}; " +                               //Printing Order Detailes 
+                    $" - Product price/pcs. : {item.ItemPrice}; " +                                      //Printing Order Detailes 
                     $" - Quantity: {orders[Convert.ToInt32(orderNumber)].OrderItems[j].Quantity}.");    //Printing Order Detailes 
             }
             decimal priceToPay = orders[Convert.ToInt32(orderNumber)].CountPrice();

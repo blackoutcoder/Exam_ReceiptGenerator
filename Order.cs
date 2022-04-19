@@ -52,5 +52,18 @@ public class Order
         return selledItemQuantity;
     }
 
-    
+    public int CountItemChosen(int index)
+    {
+        int selledItemQuantity = 0;
+        for (int i = 0; i < OrderItems.Count; i++)
+        {
+            if (OrderItems[i].Item.ItemIndex == index)
+            {
+                selledItemQuantity += OrderItems[i].Quantity;
+            }
+        }
+        return selledItemQuantity;
+    }
+
+
 }
