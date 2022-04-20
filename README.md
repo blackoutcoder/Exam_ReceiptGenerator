@@ -23,3 +23,4 @@
  CountItem() method added to Order.cs to count total number of items in all orders <|||||>
  'Total items sold:' calculation added to report details. <|||||>
  CountItemChosen(int index) method added to Order.cs to calculate the number of items in all orders by the chosen item index <|||||>
+ Price visibility fixed in Console for orders, also added 'Total calculation' to calculate total summ in Euro payed for each Item in order <|||||> 

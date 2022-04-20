@@ -42,10 +42,11 @@ public class Methods
                 Item item = orders[i].OrderItems[j].Item;
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine(
-                    $" - Product: {item.ItemName}; " +
-                    $" - Product description: {item.ItemDescription}; " +
-                    $" - Product price/pcs.: {item.ItemPrice}; " +
-                    $" - Quantity: {orders[i].OrderItems[j].Quantity}.");
+                    $" - Product: {item.ItemName} | " +
+                    $" Product description: {item.ItemDescription} | " +
+                    $" Product price/pcs.: {item.ItemPrice} Eur | " +
+                    $" Quantity: {orders[i].OrderItems[j].Quantity} | " +
+                    $" Total: {item.ItemPrice * orders[i].OrderItems[j].Quantity} Eur. ");
             }
             int itemIndex1 = orders[i].CountItemChosen(11);
             int itemsBought = orders[i].CountItem();
@@ -62,44 +63,45 @@ public class Methods
         
         Console.WriteLine($">Total payed: {totalPrice} Eur.");
         Console.WriteLine();
-        Console.WriteLine($">Total products sold: {totalItems} pcs.");                                 //Total products sold
+        Console.WriteLine($">Total products sold: {totalItems} pcs.");                                                  //Total products sold
         Console.WriteLine();
         Console.WriteLine($">Total Brandy sold {totalBest} pcs for {(totalBest) * 12.49} Eur.");
         Console.WriteLine();
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine($">{orders.Count} receipt(s) successfully generated");
-        Console.WriteLine(">Enter an order number to view details and press ENTER...");                 // Code to view an order you want .
+        Console.WriteLine(">Enter an order number to view details and press ENTER...");                                 // Code to view an order you want .
         string orderNumber = Console.ReadLine();
-        while (!int.TryParse(orderNumber, out int num) == true)                                         //Checks if an entered character is not a <string>                                                               
+        while (!int.TryParse(orderNumber, out int num) == true)                                                         //Checks if an entered character is not a <string>                                                               
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($">Enter an <int> value and press ENTER...");                             //while you are entering a <string> program will asks you to enter an <int> type value.
+            Console.WriteLine($">Enter an <int> value and press ENTER...");                                             //while you are entering a <string> program will asks you to enter an <int> type value.
             orderNumber = Console.ReadLine();
         }
-        if (Convert.ToInt32(orderNumber) > 0 && Convert.ToInt32(orderNumber) < orders.Count)            //If Order number is higher than 0 and lower than a number of generated orders - true 
+        if (Convert.ToInt32(orderNumber) > 0 && Convert.ToInt32(orderNumber) < orders.Count)                            //If Order number is higher than 0 and lower than a number of generated orders - true 
         {
             Console.WriteLine($">Order nr.{orderNumber} details: ");
-            Console.WriteLine($">Order data: {orders[Convert.ToInt32(orderNumber)].OrderDate}.");       //Printing Order Detailes 
-            for (int j = 0; j < orders[Convert.ToInt32(orderNumber)].OrderItems.Count; j++)             //Printing Order Detailes 
-            {                                                                                           //Printing Order Detailes 
+            Console.WriteLine($">Order data: {orders[Convert.ToInt32(orderNumber)].OrderDate}.");                       //Printing Order Detailes 
+            for (int j = 0; j < orders[Convert.ToInt32(orderNumber)].OrderItems.Count; j++)                             //Printing Order Detailes 
+            {                                                                                                           //Printing Order Detailes 
                 Item item = orders[Convert.ToInt32(orderNumber)].OrderItems[j].Item;
-                Console.ForegroundColor = ConsoleColor.White;                                           //Printing Order Detailes 
-                Console.WriteLine(                                                                      //Printing Order Detailes 
-                    $" - Product : {item.ItemName}; " +                                                  //Printing Order Detailes 
-                    $" - Product description : {item.ItemDescription}; " +                               //Printing Order Detailes 
-                    $" - Product price/pcs. : {item.ItemPrice}; " +                                      //Printing Order Detailes 
-                    $" - Quantity: {orders[Convert.ToInt32(orderNumber)].OrderItems[j].Quantity}.");    //Printing Order Detailes 
+                Console.ForegroundColor = ConsoleColor.White;                                                           //Printing Order Detailes 
+                Console.WriteLine(                                                                                      //Printing Order Detailes 
+                    $" - Product: {item.ItemName} | " +                                                                 //Printing Order Detailes 
+                    $" Product description : {item.ItemDescription} | " +                                               //Printing Order Detailes 
+                    $" Product price/pcs. : {item.ItemPrice}; " +                                                       //Printing Order Detailes 
+                    $" Quantity: {orders[Convert.ToInt32(orderNumber)].OrderItems[j].Quantity} | " +
+                    $" Total: {item.ItemPrice * orders[Convert.ToInt32(orderNumber)].OrderItems[j].Quantity} Eur. ");   //Printing Order Detailes 
             }
             decimal priceToPay = orders[Convert.ToInt32(orderNumber)].CountPrice();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($">Total price: {priceToPay} Eur.");
-            Console.WriteLine();                                                                        //Printing Order Detailes 
-            Console.ReadLine();                                                                         //Printing Order Detailes 
+            Console.WriteLine();                                                                                        //Printing Order Detailes 
+            Console.ReadLine();                                                                                         //Printing Order Detailes 
         }
         else
         {
-            Console.ForegroundColor = ConsoleColor.Red;                                                 //Changes the text color in console
-            Console.WriteLine("Invalid order number entered, press ENTER to close...");                 //If entered order number is invalid - writes a 'message' in console
+            Console.ForegroundColor = ConsoleColor.Red;                                                                 //Changes the text color in console
+            Console.WriteLine("Invalid order number entered, press ENTER to close...");                                 //If entered order number is invalid - writes a 'message' in console
             Console.ReadLine();
         }
         
