@@ -21,6 +21,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Functions", "Functions", "{63FCA8E2-04B2-4095-9903-66F1CE2F221B}"
 	ProjectSection(SolutionItems) = preProject
 		Methods.cs = Methods.cs
+		Serializer.cs = Serializer.cs
 	EndProjectSection
 EndProject
 Global

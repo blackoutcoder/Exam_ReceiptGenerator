@@ -24,3 +24,5 @@
  'Total items sold:' calculation added to report details. <|||||>
  CountItemChosen(int index) method added to Order.cs to calculate the number of items in all orders by the chosen item index <|||||>
  Price visibility fixed in Console for orders, also added 'Total calculation' to calculate total summ in Euro payed for each Item in order <|||||> 
+ Serializer.cs added to Function <|||||> 
+ Serialize(List<Order> orders) method added whith takes a list of orders and writes it to a .txt and .json files in local directory <|||||> 

@@ -24,6 +24,7 @@ public class Methods
     }
     public void PrintOrdersData()
     {
+        Serializer serializer = new Serializer();
         OrderRepository orderRepository = new OrderRepository();
         List<Order> orders = orderRepository.Retrieve();
         Console.ForegroundColor = ConsoleColor.Red;
@@ -37,6 +38,7 @@ public class Methods
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($">Order nr.{i + 1} details: ");
             Console.WriteLine($">Order data: {orders[i].OrderDate}.");
+            serializer.Serialize(orders);                                                                               //Order serializer, writes all orders info in a ReceiptList.txt and ReceiptList.json files
             for (int j = 0; j < orders[i].OrderItems.Count; j++)
             {
                 Item item = orders[i].OrderItems[j].Item;
@@ -47,6 +49,7 @@ public class Methods
                     $" Product price/pcs.: {item.ItemPrice} Eur | " +
                     $" Quantity: {orders[i].OrderItems[j].Quantity} | " +
                     $" Total: {item.ItemPrice * orders[i].OrderItems[j].Quantity} Eur. ");
+                //serializer.Serialize(item.ItemName);                                                                  //Overrides the line is OrderList.txt
             }
             int itemIndex1 = orders[i].CountItemChosen(11);
             int itemsBought = orders[i].CountItem();
@@ -66,6 +69,7 @@ public class Methods
         Console.WriteLine($">Total products sold: {totalItems} pcs.");                                                  //Total products sold
         Console.WriteLine();
         Console.WriteLine($">Total Brandy sold {totalBest} pcs for {(totalBest) * 12.49} Eur.");
+        Console.WriteLine();
         Console.WriteLine();
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine($">{orders.Count} receipt(s) successfully generated");
