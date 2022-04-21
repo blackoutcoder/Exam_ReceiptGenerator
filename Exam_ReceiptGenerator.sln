@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Functions", "Functions", "{
 		Serializer.cs = Serializer.cs
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{4E399AD2-C6AE-49FD-8F74-D03ED9F89029}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{38C1797C-BC99-4716-83AA-3FA1F8F1A75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38C1797C-BC99-4716-83AA-3FA1F8F1A75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38C1797C-BC99-4716-83AA-3FA1F8F1A75F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E399AD2-C6AE-49FD-8F74-D03ED9F89029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E399AD2-C6AE-49FD-8F74-D03ED9F89029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E399AD2-C6AE-49FD-8F74-D03ED9F89029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E399AD2-C6AE-49FD-8F74-D03ED9F89029}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
