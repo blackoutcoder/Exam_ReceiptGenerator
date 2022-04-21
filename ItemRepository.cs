@@ -9,8 +9,8 @@ public class ItemRepository
     {
         Items = new List<Item>();
 
-        Items.Add(new Item("Pork", "Meat products", 4.00m, 1));              //Static item list, like products for sell in the shop.
-        Items.Add(new Item("Salmon", "Fish products", 8.00m, 2));            // Add/Remove option could be added in perspective
+        Items.Add(new Item("Pork", "Meat products", 4.00m, 1));                  //Static item list, like products for sell in the shop.
+        Items.Add(new Item("Salmon", "Fish products", 8.00m, 2));                // Add/Remove option could be added in perspective
         Items.Add(new Item("Chicken fillets", "Meat products", 3.00m, 3));   
         Items.Add(new Item("Potatoes", "Vegetables", 0.50m, 4));
         Items.Add(new Item("Tomatoes", "Vegetables", 0.80m, 5));
@@ -31,7 +31,7 @@ public class ItemRepository
         Items.Add(new Item("Sprite", "Drinks", 2.99m, 20));
     }
 
-    public List<Item> Generate()                                                        //Generate() method generates a random list of orders from an 'Items' list
+    public List<Item> Generate()                                                  //Generate() method generates a random list of orders from an 'Items' list
     {
         Random random = new Random();
         List<Item> items = new List<Item>();

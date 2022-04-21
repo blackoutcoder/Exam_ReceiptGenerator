@@ -26,3 +26,4 @@
  Price visibility fixed in Console for orders, also added 'Total calculation' to calculate total summ in Euro payed for each Item in order <|||||> 
  Serializer.cs added to Function <|||||> 
  Serialize(List<Order> orders) method added whith takes a list of orders and writes it to a .txt and .json files in local directory <|||||> 
+ *.cs files formatted <|||||> 
