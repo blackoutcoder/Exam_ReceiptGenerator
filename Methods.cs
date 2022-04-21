@@ -91,7 +91,7 @@ public class Methods
         //var text = File.ReadAllText(@$"C:\Users\romka\Documents\vigi15\Output for C#\report.json");                       //Test
         //File.Delete(@"C:\Users\romka\Documents\vigi15\Output for C#\report7.json");                                       //Test
         //File.AppendAllText(@"C:\Users\romka\Documents\vigi15\Output for C#\lastorder.json", Convert.ToString(orders));
-        serializer.Serialize(orders, lastOrder);                                                                            //Order serializer, writes all orders info in a ReceiptList.txt and ReceiptList.json files
+        serializer.Serialize(orders, "Report");                                                                            //Order serializer, writes all orders info in a ReceiptList.txt and ReceiptList.json files
 
         Console.ForegroundColor = ConsoleColor.DarkCyan;
         Console.WriteLine(" >Enter an order number to view details and press ENTER...");                                    // Code to view an order you want .
